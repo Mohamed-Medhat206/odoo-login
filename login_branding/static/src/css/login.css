@@ -1,0 +1,267 @@
+/* Login Page Branding — split-screen layout.
+ * Color variables (--lb-navy, --lb-grad-end, --lb-blue) are overridden inline
+ * from the login.branding record; the values below are fallbacks. */
+
+.lb_login {
+    --lb-navy: #0d1b3e;
+    --lb-grad-end: #00aeef;
+    --lb-blue: #2563eb;
+    --lb-blue-dark: #1d4ed8;
+    --lb-cyan: #29abe2;
+    --lb-field: #eef2fb;
+
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------------ *
+ * Left: branded panel
+ * ------------------------------------------------------------------ */
+
+.lb_login_brand {
+    position: relative;
+    flex: 0 0 50%;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--lb-navy) 0%, var(--lb-grad-end) 100%);
+    display: flex;
+    align-items: center;
+}
+
+/* Soft organic blobs + faint grid, drawn with gradients only */
+.lb_login_brand_bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(closest-side, rgba(255, 255, 255, .085), transparent),
+        radial-gradient(closest-side, rgba(255, 255, 255, .06), transparent),
+        radial-gradient(closest-side, rgba(41, 171, 226, .14), transparent),
+        radial-gradient(closest-side, rgba(255, 255, 255, .06), transparent),
+        linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+    background-position: 10% 14%, 80% 6%, 26% 82%, 92% 66%, 0 0, 0 0;
+    background-size: 52% 46%, 46% 40%, 64% 58%, 50% 50%, 44px 44px, 44px 44px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+    pointer-events: none;
+}
+
+.lb_login_brand_body {
+    position: relative;
+    padding: 0 4.5rem;
+    max-width: 660px;
+    color: #fff;
+}
+
+.lb_login_brand_body > img {
+    margin-bottom: 2.5rem;
+    max-width: 220px;
+    height: auto;
+}
+
+.lb_login_title {
+    font-size: 2.35rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 .75rem;
+    color: #fff;
+}
+
+.lb_login_subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, .68);
+    margin: 0 0 2.75rem;
+}
+
+.lb_login_features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lb_login_features li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.35rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, .92);
+}
+
+.lb_check {
+    flex: 0 0 auto;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--lb-blue);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75rem;
+}
+
+/* ------------------------------------------------------------------ *
+ * Right: sign-in panel
+ * ------------------------------------------------------------------ */
+
+.lb_login_panel {
+    position: relative;
+    flex: 1 1 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lb_login_box {
+    width: 100%;
+    max-width: 390px;
+}
+
+.lb_login_box > img {
+    display: block;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto 2rem;
+}
+
+.lb_login_heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 2.5rem;
+}
+
+.lb_login_box .form-label {
+    font-size: .82rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: .35rem;
+}
+
+.lb_login_box .form-control {
+    background: var(--lb-field);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: .7rem .95rem;
+    font-size: .95rem;
+    color: #111827;
+    box-shadow: none;
+}
+
+.lb_login_box .form-control:focus {
+    background: #fff;
+    border-color: var(--lb-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .15);
+}
+
+/* Database picker (only rendered when several databases are available) */
+.lb_login_box .input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.lb_login_box .input-group .btn-secondary {
+    background: #dfe5f3;
+    border-color: transparent;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #374151;
+    font-size: .9rem;
+}
+
+.lb_login_box .input-group .btn-secondary:hover {
+    background: #d2daee;
+    color: #111827;
+}
+
+.lb_password_wrap {
+    position: relative;
+}
+
+.lb_password_wrap .form-control {
+    padding-right: 2.9rem;
+}
+
+.lb_password_toggle {
+    position: absolute;
+    top: 50%;
+    right: .35rem;
+    transform: translateY(-50%);
+    background: none;
+    border: 0;
+    padding: .45rem .6rem;
+    color: #6b7280;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.lb_password_toggle:hover {
+    color: #111827;
+}
+
+.lb_signin_btn,
+.lb_login_box .btn-primary {
+    width: 100%;
+    background: var(--lb-blue);
+    border-color: var(--lb-blue);
+    border-radius: 8px;
+    padding: .72rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.lb_signin_btn:hover,
+.lb_login_box .btn-primary:hover {
+    background: var(--lb-blue-dark);
+    border-color: var(--lb-blue-dark);
+}
+
+.lb_login_box .oe_login_buttons {
+    margin-top: 1.5rem;
+}
+
+/* Secondary links injected by auth_signup / auth_oauth */
+.lb_login_box .oe_login_buttons a,
+.lb_login_box .btn-link {
+    color: var(--lb-blue);
+    font-size: .875rem;
+    text-decoration: none;
+}
+
+.lb_login_box .oe_login_buttons a:hover,
+.lb_login_box .btn-link:hover {
+    text-decoration: underline;
+}
+
+.lb_login_footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: .85rem;
+}
+
+.lb_login_footer a {
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.lb_login_footer a:hover {
+    color: var(--lb-blue);
+}
+
+/* ------------------------------------------------------------------ *
+ * Responsive — stack to a single column, hide the brand panel
+ * ------------------------------------------------------------------ */
+
+@media (max-width: 991.98px) {
+    .lb_login_brand {
+        display: none;
+    }
+
+    .lb_login_panel {
+        flex: 1 1 100%;
+    }
+}
