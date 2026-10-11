@@ -2,17 +2,17 @@
 
 A modern split-screen login page for **Odoo**, fully editable from the backend — no code changes needed to rebrand it.
 
-**Available for both Odoo 18 and Odoo 19.** You are reading the **Odoo 18** version — see [Versions](#versions) for the Odoo 19 one.
+**Available for both Odoo 18 and Odoo 19** — pick the folder that matches your version (see [Versions](#versions)).
 
 ## Preview
 
 The new login page:
 
-![Login page](static/description/img1.png)
+![Login page](login_branding/static/description/img1.png)
 
 Everything on it is edited from *Settings > Login Page Design*:
 
-![Login Page Design settings](static/description/img2.png)
+![Login Page Design settings](login_branding/static/description/img2.png)
 
 ## Features
 
@@ -25,7 +25,9 @@ Everything on it is edited from *Settings > Login Page Design*:
 
 ## Installation
 
-1. Copy the `login_branding` folder into your Odoo addons path.
+1. Copy the folder for your Odoo version into your Odoo addons path, and rename it to `login_branding` (the technical name must be the same in both cases):
+   - Odoo 18 → [`login_branding/`](login_branding)
+   - Odoo 19 → [`login_branding_odoo19/`](login_branding_odoo19)
 2. Restart Odoo and update the apps list (Apps > Update Apps List).
 3. Install **Login Page Branding**.
 4. Open *Settings > Login Page Design* (administrators only) and make it yours.
@@ -41,7 +43,7 @@ Everything on it is edited from *Settings > Login Page Design*:
 | Gradient start / end | Background gradient of the branded panel. |
 | Primary color | Buttons, focus ring, links and bullet icons. |
 
-The bundled logo and icon are neutral placeholders; replace `static/src/img/logo.png` and `static/description/icon.png`, or simply upload your own logo from the settings form.
+The bundled logo and icon are neutral placeholders; replace `static/src/img/logo.png` and `static/description/icon.png` inside the module folder, or simply upload your own logo from the settings form.
 
 The module also uses its logo as the browser-tab icon on all pages (`views/favicon_templates.xml`). Delete that file from the manifest's `data` list if you don't want that behavior.
 
@@ -55,12 +57,12 @@ The module also uses its logo as the browser-tab icon on all pages (`views/favic
 
 ## Versions
 
-| Odoo version | Branch | Module version |
+| Odoo version | Folder | Module version |
 | --- | --- | --- |
-| 18.0 | `18.0` | `18.0.1.1.0` |
-| 19.0 | `19.0` | `19.0.1.1.0` |
+| 18.0 | [`login_branding/`](login_branding) | `18.0.1.1.0` |
+| 19.0 | [`login_branding_odoo19/`](login_branding_odoo19) | `19.0.1.1.0` |
 
-Both versions look and behave the same. The only code difference is in the sign-in form template, because Odoo 19 restructured the stock login form. Use the branch that matches your Odoo version.
+Both versions look and behave the same. The only code difference is in the sign-in form template, because Odoo 19 restructured the stock login form. Use the folder that matches your Odoo version. Don't install both in the same addons path, since they share the technical name `login_branding`.
 
 ## Compatibility
 
