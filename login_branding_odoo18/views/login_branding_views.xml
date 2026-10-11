@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_login_branding_form" model="ir.ui.view">
+        <field name="name">login.branding.form</field>
+        <field name="model">login.branding</field>
+        <field name="arch" type="xml">
+            <form string="Login Page Design">
+                <sheet>
+                    <field name="logo" widget="image" class="oe_avatar" options="{'preview_image': 'logo'}"/>
+                    <div class="oe_title">
+                        <label for="brand_title" string="Headline"/>
+                        <h1>
+                            <field name="brand_title" placeholder="Welcome to ..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Branded Panel">
+                            <field name="brand_subtitle" placeholder="Short line shown under the headline"/>
+                            <field name="show_features"/>
+                        </group>
+                        <group string="Sign-in Panel &amp; Colors">
+                            <field name="form_heading" placeholder="(optional) heading above the form"/>
+                            <field name="gradient_start" widget="color"/>
+                            <field name="gradient_end" widget="color"/>
+                            <field name="primary_color" widget="color"/>
+                        </group>
+                    </group>
+                    <separator string="Feature List"/>
+                    <field name="feature_ids">
+                        <list editable="bottom">
+                            <field name="sequence" widget="handle"/>
+                            <field name="name"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Menu opens the single config record straight into its form view. -->
+    <record id="action_login_branding" model="ir.actions.server">
+        <field name="name">Login Page Design</field>
+        <field name="model_id" ref="model_login_branding"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_config()</field>
+    </record>
+
+    <menuitem id="menu_login_branding"
+              name="Login Page Design"
+              parent="base.menu_administration"
+              action="action_login_branding"
+              groups="base.group_system"
+              sequence="91"/>
+
+</odoo>
