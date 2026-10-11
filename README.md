@@ -8,11 +8,11 @@ A modern split-screen login page for **Odoo**, fully editable from the backend �
 
 The new login page:
 
-![Login page](login_branding/static/description/img1.png)
+![Login page](login_branding_odoo18/static/description/img1.png)
 
 Everything on it is edited from *Settings > Login Page Design*:
 
-![Login Page Design settings](login_branding/static/description/img2.png)
+![Login Page Design settings](login_branding_odoo18/static/description/img2.png)
 
 ## Features
 
@@ -26,7 +26,7 @@ Everything on it is edited from *Settings > Login Page Design*:
 ## Installation
 
 1. Copy the folder for your Odoo version into your Odoo addons path, and rename it to `login_branding` (the technical name must be the same in both cases):
-   - Odoo 18 → [`login_branding/`](login_branding)
+   - Odoo 18 → [`login_branding_odoo18/`](login_branding_odoo18)
    - Odoo 19 → [`login_branding_odoo19/`](login_branding_odoo19)
 2. Restart Odoo and update the apps list (Apps > Update Apps List).
 3. Install **Login Page Branding**.
@@ -59,7 +59,7 @@ The module also uses its logo as the browser-tab icon on all pages (`views/favic
 
 | Odoo version | Folder | Module version |
 | --- | --- | --- |
-| 18.0 | [`login_branding/`](login_branding) | `18.0.1.1.0` |
+| 18.0 | [`login_branding_odoo18/`](login_branding_odoo18) | `18.0.1.1.0` |
 | 19.0 | [`login_branding_odoo19/`](login_branding_odoo19) | `19.0.1.1.0` |
 
 Both versions look and behave the same. The only code difference is in the sign-in form template, because Odoo 19 restructured the stock login form. Use the folder that matches your Odoo version. Don't install both in the same addons path, since they share the technical name `login_branding`.
