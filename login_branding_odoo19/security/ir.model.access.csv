@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_login_branding_system,login.branding.system,model_login_branding,base.group_system,1,1,1,1
+access_login_branding_feature_system,login.branding.feature.system,model_login_branding_feature,base.group_system,1,1,1,1
+access_login_branding_public,login.branding.public,model_login_branding,base.group_public,1,0,0,0
